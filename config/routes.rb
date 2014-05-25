@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  resources :ponies
-
   get 'ponyfy/index'
+
+  root :to => redirect('/ponies')
+  resources :ponies
 
 
 end
