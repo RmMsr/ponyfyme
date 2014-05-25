@@ -7,25 +7,78 @@
 
 <p>
   <strong>Picture:</strong>
-  <%= image_tag(@pony.picture_url, :width => 300) if @pony.picture.present? %>
+  <%= image_tag(@pony.picture_url, :width => 300, :id => 'myPonyFace') if @pony.picture.present? %>
 </p>
 
+<<<<<<< HEAD
 <%= link_to 'Edit', edit_pony_path(@pony) %> |
 <%= link_to 'Back', ponies_path %>
 
 <div id="createPony">
 	<img src="<%= asset_path "ponies/pony_2.png" %>" />
 </div>
+=======
+<div class="optionsAjustColors">
+
+	<div>
+		Red: <input type="text" id="value-red" value="0" />
+	</div>
+	<div id="slider-red" class="ui-slider" style="width:150px;margin-top:5px;margin-bottom:5px;">
+		<a href="#" style="outline:none;border:none;">
+			<div class="ui-slider-handle" style="left: 57px;"></div>
+		</a>
+		<div class="ui-slider-range"></div>
+	</div>
+
+	<div>
+		Green: 
+		<input type="text" id="value-green" value="0" />
+	</div>
+	<div id="slider-green" class="ui-slider" style="width:150px;margin-top:5px;margin-bottom:5px;">
+		<a href="#" style="outline:none;border:none;">
+			<div class="ui-slider-handle" style="left: 69px;"></div>
+		</a>
+		<div class="ui-slider-range"></div>
+	</div>
+
+	<div>
+		Blue: 
+		<input type="text" id="value-blue" value="0" />
+	</div>
+	<div id="slider-blue" class="ui-slider" style="width:150px;margin-top:5px;margin-bottom:5px;">
+		<a href="#" style="outline:none;border:none;">
+			<div class="ui-slider-handle" style="left: 69px;"></div>
+		</a>
+		<div class="ui-slider-range"></div>
+	</div>
+
+	<input type="button" onclick="ajustColors();" value="Adjust colors" />
+	<input type="button" onclick="resetColors();" value="Reset"><br>
+</div>
+
+<!--<div id="createPony">
+	
+	<img src="<%= asset_path "ponies/pony_2.png"%>" />
+
+</div>-->
+>>>>>>> 37ef5943539bbd3e923b084c61d311a6982af7d3
 
 
 
 <script type="text/javascript">
+
+	function ajustColors() {
+
+		$("#myPonyFace").pixastic("colorajust", {
+			red: $('#value-red').val(),
+			blue: $('#value-blue').val(),
+			green: $('#value-green').val(),
+		})
+
+	}
+
 	$(document).ready(function(e) {
 
-		$('#createPony').draggable()
-			.resizable();
-
-		console.log('test');;
-
 	});
-</script>
+
+--></script>
