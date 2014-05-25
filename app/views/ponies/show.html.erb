@@ -7,17 +7,14 @@
   <%= @pony.name %>
 </p>
 
-<p>
-  <strong>Picture:</strong>
+<div id="modifyMyPony">
+	<img src="<%= asset_path "ponies/pony_2.png" %>" id="realPony" />
   <%= image_tag(@pony.picture_url, :width => 300, :id => 'myPonyFace') if @pony.picture.present? %>
-</p>
+</div>
 
 <%= link_to 'Edit', edit_pony_path(@pony) %> |
 <%= link_to 'Back', ponies_path %>
 
-<div id="createPony">
-	<img src="<%= asset_path "ponies/pony_2.png" %>" />
-</div>
 <div class="optionsAjustColors">
 
 	<div>
@@ -94,6 +91,24 @@
 				}, value : 50
 		}).slider("moveTo", 50);
 
-		});
+		$(function() {
+
+			var $img = $("#realPony");
+			var imgPos = $img.offset();
+			console.log(imgPos);
+
+		    $( "#myPonyFace" ).draggable({ containment: 'parent' });
+		    $( "#myPonyFace" ).resizeable();
+		    // $( "#droppable" ).droppable({
+		    //   drop: function( event, ui ) {
+		    //     $( this )
+		    //       .addClass( "ui-state-highlight" )
+		    //       .find( "p" )
+		    //         .html( "Dropped!" );
+		    //   }
+		    // });
+		  });
+
+	});
 
 --></script>
