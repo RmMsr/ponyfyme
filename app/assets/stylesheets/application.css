@@ -27,9 +27,19 @@ h1 {
 }
 
 /** begin: drag and resize **/
-#createPony{ height: 600px; }
-body>#createPony{
-	height:auto;
-	min-height:100%;
+#modifyMyPony {
+	max-width: 600px;
+	max-height: 600px;
+	position: relative;
+}
+#realPony {
+	max-height: 100%;
+	max-width: 100%;
+	border: 1px solid #FF00AA;
+}
+#myPonyFace {
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 /** end: drag and resize **/;
