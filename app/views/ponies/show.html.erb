@@ -1,3 +1,5 @@
+<%= javascript_include_tag 'pixastic.custom' %>
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -61,16 +63,32 @@
 
 	function ajustColors() {
 
-		$("#myPonyFace").pixastic("colorajust", {
+		$("#myPonyFace").pixastic("coloradjust", {
 			red: $('#value-red').val(),
 			blue: $('#value-blue').val(),
 			green: $('#value-green').val(),
-		})
+		});
 
 	}
 
 	$(document).ready(function(e) {
 
-	});
+		$("#slider-red").slider({
+			slide: function() {
+				$("#value-red").val((($("#slider-red").slider("value") / 100 * 2) - 1).toFixed(2));
+				}, value : 50
+		}).slider("moveTo", 75);
+		$("#slider-green").slider({
+				slide: function() {
+					$("#value-green").val((($("#slider-green").slider("value") / 100 * 2) - 1).toFixed(2));
+				}, value : 50
+		}).slider("moveTo", 50);
+		$("#slider-blue").slider({
+				slide: function() {
+					$("#value-blue").val((($("#slider-blue").slider("value") / 100 * 2) - 1).toFixed(2));
+				}, value : 50
+		}).slider("moveTo", 50);
+
+		});
 
 --></script>
