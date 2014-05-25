@@ -1,0 +1,11 @@
+<div class="row" id="listPonies">
+  <% @ponies.each do |pony| %>
+    <div class="col-lg-3 pony">
+      <a href="/ponies/<%= pony.id %>">
+        <%= image_tag(pony.picture_url, :width => 600) if pony.picture.present? %>
+        <h3><%= pony.name %></h3>
+      </a>
+    </div>
+  <% end %>
+</div>
+<%= link_to 'New Pony', new_pony_path %>

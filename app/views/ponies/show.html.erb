@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pony.name %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= image_tag(@pony.picture_url, :width => 300) if @pony.picture.present? %>
+</p>
+
+<div id="createPony">
+	
+	<img src="<%= asset_path "ponies/pony_2.png"%>" />
+
+</div>
+
+<%= link_to 'Edit', edit_pony_path(@pony) %> |
+<%= link_to 'Back', ponies_path %>
+
+<script type="text/javascript">
+	$(document).ready(function(e) {
+
+		$('#createPony').draggable()
+			.resizable();
+
+		console.log('test');;
+
+	});
+</script>

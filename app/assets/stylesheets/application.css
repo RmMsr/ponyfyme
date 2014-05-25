@@ -1,0 +1,35 @@
+body {
+	width: 800px;
+	background-color: #F6CEF5;
+	margin: 20px auto;
+}
+h1 {
+	color: #013ADF;
+	font-size: 6em;
+	font-family: 'Indie Flower', cursive;
+	font-weight: bold;
+}
+
+#listPonies .pony {
+	position: relative;
+	width: 100%;
+}
+#listPonies .pony img { width: 100%; }
+#listPonies .pony h3 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+}
+
+/** begin: drag and resize **/
+#createPony{ height: 600px; }
+body>#createPony{
+	height:auto;
+	min-height:100%;
+}
+/** end: drag and resize **/;
